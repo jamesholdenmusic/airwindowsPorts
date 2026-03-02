@@ -16,7 +16,7 @@ jobs:
 
       - name: Clone Max SDK
         run: |
-          git clone --depth 1 https://github.com/Cycling74/max-sdk.git "$RUNNER_TEMP/max-sdk"
+          git clone --depth 1 --recurse-submodules https://github.com/Cycling74/max-sdk.git "$RUNNER_TEMP/max-sdk"
 
       - name: Install Ninja
         run: brew install ninja
@@ -50,7 +50,7 @@ jobs:
       - name: Clone Max SDK
         shell: bash
         run: |
-          git clone --depth 1 https://github.com/Cycling74/max-sdk.git "$RUNNER_TEMP/max-sdk"
+          git clone --depth 1 --recurse-submodules https://github.com/Cycling74/max-sdk.git "$RUNNER_TEMP/max-sdk"
 
       - name: Generate wrapper code
         run: python3 max_external/scripts/generate_console7_family.py
