@@ -13,6 +13,10 @@ add_library(
     "ToTape6Engine.hpp"
 )
 
+if(WIN32)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE NOMINMAX)
+endif()
+
 set(${PROJECT_NAME}_EXTERN_OUTPUT_NAME "airfx.totape6~" CACHE STRING "" FORCE)
 mark_as_advanced(${PROJECT_NAME}_EXTERN_OUTPUT_NAME)
 

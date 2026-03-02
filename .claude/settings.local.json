@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh repo view airwindows/airwindows --json url)",
+      "Bash(gh search repos \"airwindows\" --owner=airwindows --json fullName,url --limit 5)",
+      "Bash(gh search repos \"airwindows\" --json fullName,url --limit 10)"
+    ]
+  }
+}

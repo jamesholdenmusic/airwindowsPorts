@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Generate Max externals for selected Airwindows VST sources."""
 
+
+
 from __future__ import annotations
 
 import argparse
@@ -33,7 +35,8 @@ class ParamSpec:
 
 
 PLUGIN_SPECS = (
-    PluginSpec("Console7Channel", "airfx.console7~"),
+    PluginSpec("FatEQ", "airfx.fateq~"),
+    PluginSpec("Console7Channel", "airfx.console7channel~"),
     PluginSpec("Console7Buss", "airfx.console7buss~"),
     PluginSpec("Console7Cascade", "airfx.console7cascade~"),
     PluginSpec("Console7Crunch", "airfx.console7crunch~"),
@@ -635,6 +638,10 @@ add_library(
     \"{source_name}\"
     \"{engine_header_name}\"
 )
+
+if(WIN32)
+    target_compile_definitions(${{PROJECT_NAME}} PRIVATE NOMINMAX)
+endif()
 
 set(${{PROJECT_NAME}}_EXTERN_OUTPUT_NAME \"{external_name}\" CACHE STRING \"\" FORCE)
 mark_as_advanced(${{PROJECT_NAME}}_EXTERN_OUTPUT_NAME)

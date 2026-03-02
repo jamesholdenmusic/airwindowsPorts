@@ -9,15 +9,15 @@ include_directories(
 add_library(
     ${PROJECT_NAME}
     MODULE
-    "airfx_console7cascade_tilde.cpp"
-    "Console7CascadeEngine.hpp"
+    "airfx_fateq_tilde.cpp"
+    "FatEQEngine.hpp"
 )
 
 if(WIN32)
     target_compile_definitions(${PROJECT_NAME} PRIVATE NOMINMAX)
 endif()
 
-set(${PROJECT_NAME}_EXTERN_OUTPUT_NAME "airfx.console7cascade~" CACHE STRING "" FORCE)
+set(${PROJECT_NAME}_EXTERN_OUTPUT_NAME "airfx.fateq~" CACHE STRING "" FORCE)
 mark_as_advanced(${PROJECT_NAME}_EXTERN_OUTPUT_NAME)
 
 include(${MAX_SDK_BASE_DIR}/script/max-posttarget.cmake)

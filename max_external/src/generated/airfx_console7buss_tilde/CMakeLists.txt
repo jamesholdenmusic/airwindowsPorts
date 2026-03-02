@@ -13,6 +13,10 @@ add_library(
     "Console7BussEngine.hpp"
 )
 
+if(WIN32)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE NOMINMAX)
+endif()
+
 set(${PROJECT_NAME}_EXTERN_OUTPUT_NAME "airfx.console7buss~" CACHE STRING "" FORCE)
 mark_as_advanced(${PROJECT_NAME}_EXTERN_OUTPUT_NAME)
 
